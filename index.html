@@ -1,15 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Hub</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adkar — Daily Remembrance</title>
+<meta name="description" content="A quiet, focused companion for morning, evening and daily Islamic adkar.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <h1>Welcome</h1>
-    <p>Educational resources and interactive tools.</p>
+<div class="star-field" aria-hidden="true"></div>
 
+<header class="site-header">
+  <a class="brand" href="#top">
+    <svg class="brand-star" viewBox="0 0 40 40" aria-hidden="true">
+      <use href="#star-8"></use>
+    </svg>
+    <span class="brand-text">
+      <span class="brand-ar">أذكار</span>
+      <span class="brand-en">Adkar</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Categories">
+    <button class="nav-link" data-nav="morning">Morning</button>
+    <button class="nav-link" data-nav="evening">Evening</button>
+    <button class="nav-link" data-nav="after-salah">After Salah</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HOME VIEW -->
+  <section id="view-home" class="view view-home">
+
+    <section class="hero">
+      <p class="hero-eyebrow">A quiet moment, morning and night</p>
+      <h1 class="hero-arabic">أذكار</h1>
+      <p class="hero-tagline">Remembrance carries the heart through the day.</p>
+      <p class="hero-desc">Six collections of adkar drawn from the Sunnah — read at your pace, and let each dhikr count itself as you go.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 40 40" class="divider-star"><use href="#star-8"></use></svg>
+    </div>
+
+    <section class="categories" aria-label="Adkar collections">
+      <div class="bento">
+
+        <button class="tile tile-lg" data-category="morning">
+          <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-sun"></use></svg>
+          <span class="tile-ar">أذكار الصباح</span>
+          <span class="tile-en">Morning</span>
+          <span class="tile-meta">6 remembrances</span>
+        </button>
+
+        <div class="tile-stack">
+          <button class="tile tile-md" data-category="evening">
+            <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-moon"></use></svg>
+            <span class="tile-ar">أذكار المساء</span>
+            <span class="tile-en">Evening</span>
+            <span class="tile-meta">6 remembrances</span>
+          </button>
+          <button class="tile tile-md" data-category="after-salah">
+            <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-hands"></use></svg>
+            <span class="tile-ar">أذكار بعد الصلاة</span>
+            <span class="tile-en">After Salah</span>
+            <span class="tile-meta">7 remembrances</span>
+          </button>
+        </div>
+
+        <button class="tile tile-sm" data-category="waking">
+          <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-rise"></use></svg>
+          <span class="tile-ar">الاستيقاظ</span>
+          <span class="tile-en">Waking Up</span>
+          <span class="tile-meta">3 remembrances</span>
+        </button>
+
+        <button class="tile tile-sm" data-category="sleep">
+          <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-star"></use></svg>
+          <span class="tile-ar">أذكار النوم</span>
+          <span class="tile-en">Before Sleep</span>
+          <span class="tile-meta">4 remembrances</span>
+        </button>
+
+        <button class="tile tile-sm" data-category="distress">
+          <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-shield"></use></svg>
+          <span class="tile-ar">أذكار الكرب</span>
+          <span class="tile-en">In Distress</span>
+          <span class="tile-meta">4 remembrances</span>
+        </button>
+
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>A small companion for daily remembrance, in the spirit of Hisn al-Muslim.</p>
+    </footer>
+
+  </section>
+
+  <!-- READER VIEW -->
+  <section id="view-reader" class="view view-reader" hidden>
+
+    <div class="reader-header">
+      <button class="back-btn" id="back-btn">
+        <svg viewBox="0 0 24 24" class="back-icon" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Collections
+      </button>
+      <div class="reader-title">
+        <span class="reader-ar" id="reader-ar"></span>
+        <span class="reader-en" id="reader-en"></span>
+      </div>
+      <div class="reader-progress">
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="progress-label" id="progress-label">0 of 0 complete</span>
+      </div>
+    </div>
+
+    <div class="adkar-list" id="adkar-list"></div>
+
+  </section>
+
+</main>
+
+<!-- shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="star-8">
+      <path d="M20 2 L23.5 14.5 L36 12 L26 20 L36 28 L23.5 25.5 L20 38 L16.5 25.5 L4 28 L14 20 L4 12 L16.5 14.5 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    </g>
+    <g id="icon-sun">
+      <circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="24" y1="4" x2="24" y2="9"/>
+        <line x1="24" y1="39" x2="24" y2="44"/>
+        <line x1="4" y1="24" x2="9" y2="24"/>
+        <line x1="39" y1="24" x2="44" y2="24"/>
+        <line x1="10.5" y1="10.5" x2="14" y2="14"/>
+        <line x1="34" y1="34" x2="37.5" y2="37.5"/>
+        <line x1="37.5" y1="10.5" x2="34" y2="14"/>
+        <line x1="14" y1="34" x2="10.5" y2="37.5"/>
+      </g>
+    </g>
+    <g id="icon-moon">
+      <path d="M30 6a18 18 0 1 0 12 30 14 14 0 0 1-12-30z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+    <g id="icon-hands">
+      <path d="M14 30V16c0-2 3-2 3 0v10M17 26v-4c0-2 3-2 3 0v6M20 27v-3c0-2 3-2 3 0v5M23 29v-2c0-2 3-2 3 0v6c0 5-3 9-8 9s-8-4-9-8l-2-6c-1-2 2-4 3-2l2 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+    </g>
+    <g id="icon-rise">
+      <circle cx="24" cy="30" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="8" y1="38" x2="40" y2="38" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <line x1="24" y1="14" x2="24" y2="18"/>
+        <line x1="13" y1="19" x2="15.5" y2="21.5"/>
+        <line x1="35" y1="19" x2="32.5" y2="21.5"/>
+      </g>
+    </g>
+    <g id="icon-star">
+      <path d="M24 8 L27 20 L39 24 L27 28 L24 40 L21 28 L9 24 L21 20 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+    <g id="icon-shield">
+      <path d="M24 6l14 5v11c0 10-6 17-14 21C16 39 10 32 10 22V11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M18 24l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
 </body>
 </html>
