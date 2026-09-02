@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -25,11 +25,14 @@
       <span class="brand-en">Adkar</span>
     </span>
   </a>
-  <nav class="site-nav" aria-label="Categories">
-    <button class="nav-link" data-nav="morning">Morning</button>
-    <button class="nav-link" data-nav="evening">Evening</button>
-    <button class="nav-link" data-nav="after-salah">After Salah</button>
-  </nav>
+  <div class="header-right">
+    <nav class="site-nav" aria-label="Categories">
+      <button class="nav-link" data-nav="morning" id="nav-morning">Morning</button>
+      <button class="nav-link" data-nav="evening" id="nav-evening">Evening</button>
+      <button class="nav-link" data-nav="after-salah" id="nav-after-salah">After Salah</button>
+    </nav>
+    <button class="lang-toggle" id="lang-toggle" type="button">العربية</button>
+  </div>
 </header>
 
 <main id="top">
@@ -38,10 +41,10 @@
   <section id="view-home" class="view view-home">
 
     <section class="hero">
-      <p class="hero-eyebrow">A quiet moment, morning and night</p>
+      <p class="hero-eyebrow" id="hero-eyebrow">A quiet moment, morning and night</p>
       <h1 class="hero-arabic">أذكار</h1>
-      <p class="hero-tagline">Remembrance carries the heart through the day.</p>
-      <p class="hero-desc">Six collections of adkar drawn from the Sunnah — read at your pace, and let each dhikr count itself as you go.</p>
+      <p class="hero-tagline" id="hero-tagline">Remembrance carries the heart through the day.</p>
+      <p class="hero-desc" id="hero-desc">Six collections of adkar drawn from the Sunnah — read at your pace, and let each dhikr count itself as you go.</p>
     </section>
 
     <div class="divider" aria-hidden="true">
@@ -55,7 +58,7 @@
           <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-sun"></use></svg>
           <span class="tile-ar">أذكار الصباح</span>
           <span class="tile-en">Morning</span>
-          <span class="tile-meta">27 remembrances</span>
+          <span class="tile-meta" data-count="27">27 remembrances</span>
         </button>
 
         <div class="tile-stack">
@@ -63,13 +66,13 @@
             <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-moon"></use></svg>
             <span class="tile-ar">أذكار المساء</span>
             <span class="tile-en">Evening</span>
-            <span class="tile-meta">6 remembrances</span>
+            <span class="tile-meta" data-count="6">6 remembrances</span>
           </button>
           <button class="tile tile-md" data-category="after-salah">
             <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-hands"></use></svg>
             <span class="tile-ar">أذكار بعد الصلاة</span>
             <span class="tile-en">After Salah</span>
-            <span class="tile-meta">7 remembrances</span>
+            <span class="tile-meta" data-count="7">7 remembrances</span>
           </button>
         </div>
 
@@ -77,28 +80,28 @@
           <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-rise"></use></svg>
           <span class="tile-ar">الاستيقاظ</span>
           <span class="tile-en">Waking Up</span>
-          <span class="tile-meta">3 remembrances</span>
+          <span class="tile-meta" data-count="3">3 remembrances</span>
         </button>
 
         <button class="tile tile-sm" data-category="sleep">
           <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-star"></use></svg>
           <span class="tile-ar">أذكار النوم</span>
           <span class="tile-en">Before Sleep</span>
-          <span class="tile-meta">4 remembrances</span>
+          <span class="tile-meta" data-count="4">4 remembrances</span>
         </button>
 
         <button class="tile tile-sm" data-category="distress">
           <svg class="tile-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#icon-shield"></use></svg>
           <span class="tile-ar">أذكار الكرب</span>
           <span class="tile-en">In Distress</span>
-          <span class="tile-meta">4 remembrances</span>
+          <span class="tile-meta" data-count="4">4 remembrances</span>
         </button>
 
       </div>
     </section>
 
     <footer class="site-footer">
-      <p>A small companion for daily remembrance, in the spirit of Hisn al-Muslim.</p>
+      <p id="footer-text">A small companion for daily remembrance, in the spirit of Hisn al-Muslim.</p>
     </footer>
 
   </section>
@@ -109,7 +112,7 @@
     <div class="reader-header">
       <button class="back-btn" id="back-btn">
         <svg viewBox="0 0 24 24" class="back-icon" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Collections
+        <span id="back-btn-label">Collections</span>
       </button>
       <div class="reader-title">
         <span class="reader-ar" id="reader-ar"></span>
@@ -171,6 +174,6 @@
   </defs>
 </svg>
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
