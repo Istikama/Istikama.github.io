@@ -479,41 +479,54 @@ main{
   margin: 0 0 16px;
 }
 
-.dhikr-translit{
-  font-family: var(--font-ui);
-  font-style: italic;
-  color: var(--ink-faint);
-  font-size: 0.88rem;
-  margin: 0 0 10px;
+.info-row{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.info-toggle{
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-muted);
+  font-size: 0.76rem;
+  padding: 5px 14px;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.info-toggle:hover{
+  color: var(--gold-soft);
+  border-color: var(--line-strong);
+}
+
+.info-toggle.is-active{
+  color: var(--gold-soft);
+  border-color: var(--gold-dim);
+  background: rgba(201,162,75,0.08);
+}
+
+.info-panel{
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s var(--ease);
+  opacity: 0;
+  transition: max-height 0.3s var(--ease), opacity 0.25s var(--ease), margin 0.3s var(--ease);
 }
 
-.dhikr-translit.is-open{ max-height: 200px; }
-
-.translit-toggle{
-  background: none;
-  border: none;
-  color: var(--gold-dim);
-  font-size: 0.78rem;
-  padding: 0;
-  margin-bottom: 12px;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition: text-decoration-color 0.2s var(--ease), color 0.2s var(--ease);
+.info-panel.is-open{
+  max-height: 260px;
+  opacity: 1;
+  margin: 12px 0 0;
 }
 
-.translit-toggle:hover{
-  color: var(--gold-soft);
-  text-decoration-color: var(--gold-dim);
-}
-
-.dhikr-translation{
-  color: var(--ink-muted);
-  font-size: 0.94rem;
-  line-height: 1.55;
-  margin: 0;
+.info-panel-reference{
+  font-style: italic;
+  color: var(--ink-faint);
+  font-size: 0.82rem;
 }
 
 .dhikr-counter{
