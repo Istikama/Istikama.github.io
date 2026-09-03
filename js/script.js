@@ -69,7 +69,7 @@
         {
           arabic: "حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم",
           meaning: { en: "Allah is sufficient for me, there is no god but Him, upon Him I rely, and He is Lord of the mighty throne. Said seven times, Allah suffices him in whatever concerns him from this world or the next.", ar: "الاكتفاء بالله والتوكل عليه رب العرش العظيم. من قالها سبع مرات كفاه الله ما أهمه من أمر الدنيا والآخرة." },
-          reference: { en: "Narrated by Abu al-Darda — Abu Dawud, Ibn as-Sunni.", ar: "رواه أبو الدرداء — أبو داود وابن السني." },
+          reference: { en: "Narrated by Abu al-Darda — Abu Dawud, Ibn as-Sunni.", ar: "فقد ورد في حديث رواه ابن السني مرفوعاً وأبو داود موقوفاً بلفظ: من قال حين يصبح وحين يمسي: حسبي الله لا إله إلا هو، عليه توكلت وهو رب العرش العظيم... سبع مرات كفاه الله ما أهمه من أمر الدنيا والآخرة. صحح إسناده شعيب الأرنؤوط في تحقيق زاد المعاد." },
           repeat: 7
         },
         {
